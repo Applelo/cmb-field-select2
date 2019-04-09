@@ -11,13 +11,42 @@ This plugin gives you two additional field types based on Select2:
 
 ## Installation
 
+### WordPress Plugin
+
 You can install this field type as you would a WordPress plugin:
 
 1. Download the plugin
 2. Place the plugin folder in your `/wp-content/plugins/` directory
 3. Activate the plugin in the Plugin dashboard
 
-Alternatively, you can include this field type within your plugin/theme. The path to front end assets (JS/CSS) can be filtered using `pw_cmb2_field_select2_asset_path`. See an example where we [load assets from the current active theme](http://link.from.pw/pw_cmb2_field_select2_asset_path).
+### Include in your plugin/theme directly
+
+You can include this field type within your plugin/theme. The path to front end assets (JS/CSS) can be filtered using `pw_cmb2_field_select2_asset_path`. See an example where we [load assets from the current active theme](http://link.from.pw/pw_cmb2_field_select2_asset_path).
+
+### Composer
+
+You can include this field type within your plugin/theme thanks to composer. Add this configurations in your `composer.json` file.
+
+```
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Applelo/cmb-field-select2"
+        }
+],
+"require": {
+	"applelo/cmb2-field-select2": "master",
+	"composer/installers": "v1.0.12"
+},
+"autoload": {
+		"files": ["vendor/cmb2-field-select2/cmb-field-select2.php"]
+},
+"extra": {
+	"installer-paths": {
+		"vendor/{$name}/": ["cmb2/cmb2"]
+	}
+}
+```
 
 ## Usage
 
